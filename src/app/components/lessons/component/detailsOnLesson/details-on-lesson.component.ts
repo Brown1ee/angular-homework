@@ -37,7 +37,6 @@ export class DetailsOnLessonComponent {
       this[field].nativeElement.focus();
     }, 0);
   }
-
   onBlur(field) {
     this.editFields[field] = false;
   }
