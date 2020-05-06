@@ -1,0 +1,59 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lesson name</th>
+      <th scope="col">Hours</th>
+      <th scope="col">Homework</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let lesson of lessons; let i = index"
+      class="pointer"
+      (click)="onClickLesson(i)"
+    >
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ lesson.name }}</td>
+      <td>{{ lesson.hour }}</td>
+      <td>{{ lesson.homework }}</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<form #lessonForm="ngForm" (ngSubmit)="onSubmit(lessonForm)" class="row">
+  <div class="form-group col-md-6">
+    <label for="name">Enter Lesson</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      ngModel
+      name="name"
+      required
+    />
+  </div>
+  <div class="form-group col-md-6">
+    <label for="hour">Enter Hours</label>
+    <input
+      type="number"
+      id="hour"
+      class="form-control"
+      ngModel
+      name="hour"
+      required
+    />
+  </div>
+  <div class="form-group col-md-12">
+    <label for="homework">Enter Homework</label>
+    <input
+      type="text"
+      id="homework"
+      class="form-control"
+      ngModel
+      name="homework"
+      required
+    />
+  </div>
+  <button class="btn btn-primary col-md-12">Add</button>
+</form>
